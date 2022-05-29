@@ -1,5 +1,5 @@
 const inputRef = document.querySelector('#validation-input');
-const dataLength = inputRef.dataset.length;
+const dataLength = Number(inputRef.dataset.length);
 
 const trueChange = () => {
   if (inputRef.classList.contains('invalid')) {
@@ -18,11 +18,11 @@ const falseChange = () => {
 };
 
 const tryChangeBorder = event => {
-  if (inputRef.value.length <= dataLength) {
+  if (inputRef.value.length === dataLength) {
     trueChange();
     return;
   }
-  if (inputRef.value.length > dataLength) {
+  if (inputRef.value.length !== dataLength) {
     falseChange();
     return;
   }
