@@ -1,14 +1,9 @@
 const categoriesRef = document.querySelectorAll('.item');
+const categoriesListRef = document.querySelector('#categories');
+
 console.log(`Number of categories: ${categoriesRef.length}`);
 
-const firstCategoryRef = document.querySelector('.item');
-console.log(`Category: ${firstCategoryRef.firstElementChild.textContent}`);
-console.log(`Elements: ${firstCategoryRef.lastElementChild.children.length}`);
-
-const secondCategoryRef = firstCategoryRef.nextElementSibling;
-console.log(`Category: ${secondCategoryRef.firstElementChild.textContent}`);
-console.log(`Elements: ${secondCategoryRef.lastElementChild.children.length}`);
-
-const thirdCategoryRef = secondCategoryRef.nextElementSibling;
-console.log(`Category: ${thirdCategoryRef.firstElementChild.textContent}`);
-console.log(`Elements: ${thirdCategoryRef.lastElementChild.children.length}`);
+for (let i = 0; i < categoriesRef.length; i += 1) {
+  console.dir(`Category: ${categoriesRef[i].children[0].textContent}`);
+  console.dir(`Elements: ${categoriesRef[i].children[1].children.length}`);
+}
